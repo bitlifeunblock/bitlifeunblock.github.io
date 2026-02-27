@@ -1,3 +1,4 @@
+wgplayer.com, WGA5630622146, DIRECT
 google.com, pub-6610872211685427, DIRECT, f08c47fec0942fa0
 
 #WG ADX
