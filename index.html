@@ -86,140 +86,163 @@
 }
 </script>
 <link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://htmlxm.github.io">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9ET83QBME"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-G9ET83QBME');</script>
 <style>
-:root{--red:#e83b24;--red-d:#c22d19;--ink:#1d1d1f;--muted:#5b5b66;--bg:#faf7f4;--card:#fff;--line:#ebe5df;--radius:16px}
+:root{--red:#ef3e23;--red-d:#c92a14;--orange:#ff8a1f;--yellow:#ffd23f;--green:#2bc46b;--blue:#2f8cff;--pink:#ff5fa2;--purple:#8a5cf6;--ink:#2a1a14;--muted:#6f5d55;--cream:#fff6ec;--card:#fff;--r:24px}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--cream)}
+h1,h2,h3,.brand,.btn,summary{font-family:Fredoka,system-ui,sans-serif}
 a{color:var(--red-d)}
-img{max-width:100%;height:auto}
-.wrap{max-width:980px;margin:0 auto;padding:0 16px}
-header{background:var(--card);border-bottom:1px solid var(--line)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:var(--ink);text-decoration:none}
-.brand img{width:34px;height:34px;border-radius:9px}
-header nav a{color:var(--muted);text-decoration:none;font-size:15px;margin-left:18px}
-header nav a:hover{color:var(--ink)}
-h1{font-size:clamp(28px,5vw,40px);line-height:1.15;margin:28px 0 8px;letter-spacing:-.02em}
-.lead{color:var(--muted);margin:0 0 22px;font-size:17px}
-/* game */
-.stage{background:#111;border-radius:var(--radius);padding:12px;display:flex;justify-content:center}
-.player{position:relative;width:100%;max-width:440px;aspect-ratio:9/16;max-height:82vh;border-radius:12px;overflow:hidden;background:#222}
-.player iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff}
-.poster{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:linear-gradient(160deg,#ff6a3d,#e83b24 55%,#b8261a);color:#fff;border:0;cursor:pointer;font:inherit;width:100%}
-.poster img{width:112px;height:112px;border-radius:26px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
-.poster .btn{background:#fff;color:var(--red-d);font-weight:800;font-size:20px;padding:14px 34px;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.2);transition:transform .15s}
-.poster:hover .btn,.poster:focus-visible .btn{transform:scale(1.05)}
-.poster small{opacity:.9}
-.bar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0 0}
-.bar button{font:inherit;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:9px 18px;border-radius:999px;cursor:pointer}
-.bar button:hover{border-color:var(--red)}
-.player.fs{position:fixed;inset:0;max-width:none;max-height:none;width:100vw;height:100vh;height:100dvh;border-radius:0;z-index:50;aspect-ratio:auto}
-.closefs{display:none;position:fixed;top:10px;right:10px;z-index:51;background:rgba(0,0,0,.7);color:#fff;border:0;border-radius:999px;width:42px;height:42px;font-size:22px;cursor:pointer}
-.player.fs + .closefs{display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+/* top bar */
+.top{background:var(--red);color:#fff}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:700;font-size:22px}
+.brand img{width:38px;height:38px;border-radius:11px;box-shadow:0 0 0 3px rgba(255,255,255,.35)}
+.top nav a{color:#fff;text-decoration:none;font-weight:600;font-size:15px;margin-left:8px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.16)}
+.top nav a:hover{background:rgba(255,255,255,.3)}
+/* hero */
+.hero{background:radial-gradient(circle at 15% 20%,rgba(255,255,255,.18) 0 2px,transparent 3px) 0 0/34px 34px,linear-gradient(180deg,var(--red) 0%,var(--orange) 100%);padding:26px 0 70px;border-radius:0 0 48px 48px;color:#fff;text-align:center}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.05;margin:6px 0 8px;font-weight:700;text-shadow:0 3px 0 rgba(0,0,0,.15)}
+.tag{display:inline-block;background:var(--yellow);color:var(--ink);font-weight:700;font-family:Fredoka,sans-serif;padding:4px 14px;border-radius:999px;font-size:14px;transform:rotate(-2deg)}
+.lead{max-width:640px;margin:0 auto 22px;font-size:18px;opacity:.96}
+.game{position:relative;margin:0 auto;width:100%;max-width:430px;aspect-ratio:9/16;max-height:80vh;background:#fff;border:8px solid #fff;border-radius:32px;box-shadow:0 18px 0 rgba(0,0,0,.12),0 30px 60px rgba(120,20,0,.35);overflow:hidden}
+.game iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:24px;background:#fff}
+.game.fs{position:fixed;inset:0;max-width:none;max-height:none;width:100vw;height:100vh;height:100dvh;border:0;border-radius:0;z-index:50;aspect-ratio:auto}
+.game.fs iframe{border-radius:0}
+.closefs{display:none;position:fixed;top:12px;right:12px;z-index:51;background:var(--red);color:#fff;border:3px solid #fff;border-radius:999px;width:46px;height:46px;font-size:20px;cursor:pointer}
+.game.fs + .closefs{display:block}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+.btn{font-size:18px;font-weight:600;border:0;padding:12px 26px;border-radius:999px;cursor:pointer;box-shadow:0 5px 0 rgba(0,0,0,.18);transition:transform .1s}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 rgba(0,0,0,.18)}
+.btn.y{background:var(--yellow);color:var(--ink)}
+.btn.w{background:#fff;color:var(--red-d)}
+.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.chips span{background:rgba(255,255,255,.2);padding:5px 12px;border-radius:999px;font-size:14px;font-weight:600}
 /* content */
-main section{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin:22px 0}
-h2{font-size:24px;line-height:1.25;margin:0 0 12px;letter-spacing:-.01em}
-h3{font-size:18px;margin:18px 0 6px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:8px}
-.stat{border:1px solid var(--line);border-radius:12px;padding:14px}
-.stat b{display:block}
-ol,ul{padding-left:22px}
-li{margin:4px 0}
-details{border-top:1px solid var(--line);padding:12px 0}
-details:first-of-type{border-top:0}
-summary{font-weight:700;cursor:pointer}
+main{margin-top:-34px}
+.card{background:var(--card);border-radius:var(--r);padding:28px;margin:0 0 22px;box-shadow:0 6px 0 #f1dfcd}
+h2{font-size:clamp(24px,3.6vw,32px);line-height:1.15;margin:0 0 14px;font-weight:700}
+h2 .dot{display:inline-block;width:14px;height:14px;border-radius:50%;margin-right:10px;vertical-align:middle}
+h3{font-size:21px;margin:22px 0 10px;font-weight:600}
+.steps{list-style:none;padding:0;margin:0;counter-reset:s}
+.steps li{position:relative;padding:4px 0 12px 52px;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:36px;height:36px;border-radius:12px;background:var(--red);color:#fff;font:700 18px/36px Fredoka,sans-serif;text-align:center}
+.steps li:nth-child(2)::before{background:var(--orange)}.steps li:nth-child(3)::before{background:var(--green)}.steps li:nth-child(4)::before{background:var(--blue)}.steps li:nth-child(5)::before{background:var(--purple)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.stat{border-radius:18px;padding:16px;background:var(--cream)}
+.stat b{font-family:Fredoka,sans-serif;font-size:19px;font-weight:600;display:block}
+.bar{height:12px;border-radius:99px;background:#eadccf;margin:8px 0 10px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:99px}
+.stat p{margin:0;font-size:15px;color:var(--muted)}
+.tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:0;padding:0;list-style:none}
+.tips li{border:3px solid var(--cream);border-radius:18px;padding:16px}
+.tips li b{display:block;font-family:Fredoka,sans-serif;font-size:18px;font-weight:600;margin-bottom:2px}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.why div{text-align:center;padding:18px 12px;border-radius:18px;color:#fff;font-family:Fredoka,sans-serif;font-weight:600;font-size:17px;line-height:1.3}
+.why div span{display:block;font-size:30px;margin-bottom:6px}
+details{background:var(--cream);border-radius:16px;padding:14px 18px;margin:10px 0}
+summary{font-weight:600;font-size:18px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--red);font-size:24px;line-height:1}
+details[open] summary::after{content:"–"}
 details p{margin:8px 0 0;color:var(--muted)}
-.note{font-size:14px;color:var(--muted)}
-footer{padding:28px 0 40px;color:var(--muted);font-size:14px;text-align:center}
-footer a{color:var(--muted);margin:0 8px}
-@media (max-width:560px){header nav a{margin-left:12px;font-size:14px}main section{padding:18px}}
+.note{font-size:14px;color:var(--muted);text-align:center;margin:8px auto 30px;max-width:720px}
+footer{background:var(--red);color:#fff;text-align:center;padding:26px 16px;font-size:15px;border-radius:40px 40px 0 0}
+footer a{color:#fff;margin:0 8px;font-weight:600}
+footer p{margin:8px 0 0;opacity:.85}
+.top nav{display:flex;flex-shrink:0}.top nav a{white-space:nowrap}.brand{white-space:nowrap}
+@media (max-width:480px){.top nav a[href="#how-to-play"]{display:none}}
+@media (max-width:560px){.card{padding:20px}.top nav a{padding:6px 10px;font-size:14px;margin-left:4px}.brand{font-size:19px}.hero{padding-bottom:60px;border-radius:0 0 32px 32px}.game{border-width:6px;border-radius:26px}}
 </style>
 </head>
 <body>
-<header>
+<header class="top">
   <div class="wrap">
-    <a class="brand" href="/"><img src="/logo.webp" width="34" height="34" alt="BitLife Unblocked logo">BitLife Unblocked</a>
+    <a class="brand" href="/"><img src="/logo.webp" width="38" height="38" alt="BitLife Unblocked logo">BitLife Unblocked</a>
     <nav aria-label="Main"><a href="#how-to-play">How to play</a><a href="#faq">FAQ</a></nav>
   </div>
 </header>
 
-<main class="wrap">
-  <h1>BitLife Unblocked</h1>
-  <p class="lead">Play BitLife online for free, right in your browser. No download, no ads, full screen — and it works on school Chromebooks.</p>
-
-  <div class="stage">
-    <div class="player" id="player">
-      <button class="poster" id="play" type="button" aria-label="Play BitLife Unblocked">
-        <img src="/icon-192.png" width="112" height="112" alt="">
-        <span class="btn">▶ Play BitLife</span>
-        <small>Loads instantly · No sign-up</small>
-      </button>
+<div class="hero">
+  <div class="wrap">
+    <span class="tag">Free · No download · No ads</span>
+    <h1>BitLife Unblocked</h1>
+    <p class="lead">Play BitLife online right in your browser. Be born, grow up, make choices — and see what kind of life you end up with. Works on school Chromebooks.</p>
+    <div class="game" id="game">
+      <iframe id="frame" src="https://htmlxm.github.io/h/bitlife/" title="BitLife Unblocked game" loading="eager" allow="fullscreen; autoplay" allowfullscreen referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms allow-pointer-lock"></iframe>
     </div>
     <button class="closefs" id="closefs" type="button" aria-label="Exit full screen">✕</button>
+    <div class="actions">
+      <button class="btn y" type="button" id="fsbtn">⛶ Full screen</button>
+      <button class="btn w" type="button" id="reload">↻ Reload</button>
+    </div>
+    <div class="chips"><span>💻 Chromebook</span><span>🖥️ PC &amp; Mac</span><span>📱 Phone &amp; tablet</span></div>
   </div>
-  <div class="bar">
-    <button type="button" id="fsbtn">⛶ Full screen</button>
-    <button type="button" id="reload">↻ Reload game</button>
-  </div>
+</div>
 
-  <section id="about">
-    <h2>What is BitLife?</h2>
-    <p><strong>BitLife</strong> is a text-based life simulator. You are born into a random family, in a random city, with your own looks, smarts and health — then you live your whole life one year at a time. Every tap of <em>Age</em> moves you forward, and every choice you make along the way (study hard or skip class, chase a dream job or play it safe, fall in love or stay single) shapes the person you become.</p>
-    <p>This page lets you play <strong>BitLife Unblocked</strong> straight in the browser. Because it runs on GitHub Pages, it is lightweight and loads quickly on school and work networks where app stores are blocked. There's nothing to install: press <em>Play</em> and start a new life.</p>
+<main class="wrap">
+  <section class="card" id="about">
+    <h2><span class="dot" style="background:var(--red)"></span>What is BitLife?</h2>
+    <p><strong>BitLife</strong> is a text-based life simulator. You're born into a random family, in a random city, with your own looks, smarts and health — then you live your whole life one year at a time. Every tap of <em>Age</em> moves you forward, and every choice along the way (study hard or skip class, chase a dream job or play it safe, fall in love or stay single) shapes who you become.</p>
+    <p>This page lets you play <strong>BitLife Unblocked</strong> straight in the browser. It runs on GitHub Pages, so it's lightweight and loads quickly on school and work networks where app stores are blocked. Nothing to install — just start a new life.</p>
   </section>
 
-  <section id="how-to-play">
-    <h2>How to play BitLife online</h2>
-    <ol>
-      <li><strong>Start a new life.</strong> Press <em>Play</em>, then choose a random life or create your own character with a name, gender and country.</li>
+  <section class="card" id="how-to-play">
+    <h2><span class="dot" style="background:var(--orange)"></span>How to play BitLife online</h2>
+    <ol class="steps">
+      <li><strong>Start a new life.</strong> Choose a random life or create your own character with a name, gender and country.</li>
       <li><strong>Age up.</strong> Tap the big <em>Age</em> button to move forward one year. Events pop up as you grow — decide how you react.</li>
-      <li><strong>Use the menus.</strong> Open <em>Occupation</em> for school and jobs, <em>Assets</em> for money and property, <em>Relationships</em> for family, friends and partners, and <em>Activities</em> for everything else.</li>
+      <li><strong>Use the menus.</strong> <em>Occupation</em> for school and jobs, <em>Assets</em> for money and property, <em>Relationships</em> for family, friends and partners, and <em>Activities</em> for everything else.</li>
       <li><strong>Watch your stats.</strong> Your choices raise or lower your four core bars. Keep them healthy to live longer.</li>
-      <li><strong>Finish your life.</strong> When your character dies you get a summary of the life you lived. Then start again and try a completely different path.</li>
+      <li><strong>Finish your life.</strong> When your character dies you get a summary of the life you lived. Then start again and try a different path.</li>
     </ol>
 
     <h3>The four BitLife stats</h3>
-    <div class="grid">
-      <div class="stat"><b>😊 Happiness</b>Raised by good relationships, hobbies and vacations; lowered by stress, debt and bad news.</div>
-      <div class="stat"><b>❤️ Health</b>Gym, doctor visits and a calm life help. Risky choices and old age wear it down.</div>
-      <div class="stat"><b>🧠 Smarts</b>Study, read books and go to the library. Smarts open doors to college and better jobs.</div>
-      <div class="stat"><b>✨ Looks</b>Partly luck at birth, partly how you take care of yourself over the years.</div>
+    <div class="stats">
+      <div class="stat"><b>😊 Happiness</b><div class="bar"><i style="width:82%;background:var(--green)"></i></div><p>Up with good relationships, hobbies and vacations; down with stress, debt and bad news.</p></div>
+      <div class="stat"><b>❤️ Health</b><div class="bar"><i style="width:68%;background:var(--red)"></i></div><p>The gym, doctor visits and a calm life help. Risky choices and old age wear it down.</p></div>
+      <div class="stat"><b>🧠 Smarts</b><div class="bar"><i style="width:74%;background:var(--blue)"></i></div><p>Study, read and visit the library. Smarts open the door to college and better jobs.</p></div>
+      <div class="stat"><b>✨ Looks</b><div class="bar"><i style="width:56%;background:var(--pink)"></i></div><p>Partly luck at birth, partly how you take care of yourself over the years.</p></div>
     </div>
   </section>
 
-  <section id="tips">
-    <h2>BitLife tips for a better life</h2>
-    <ul>
-      <li><strong>Study early.</strong> Going to the library and studying harder at school while you're young pays off later with college and higher-paying careers.</li>
-      <li><strong>Keep a balance.</strong> A high salary with zero happiness is still a rough life. Spend time with family and friends, and take breaks.</li>
-      <li><strong>Save money before you spend it.</strong> Houses, cars and luxury items cost money every year. Don't buy more than your income can handle.</li>
-      <li><strong>Visit the doctor when you're sick.</strong> Ignoring an illness can drain your health fast, especially as you get older.</li>
-      <li><strong>Experiment.</strong> The fun of BitLife is replaying it. Try a perfect life, a chaotic life, a famous life — each run is different.</li>
+  <section class="card" id="tips">
+    <h2><span class="dot" style="background:var(--green)"></span>BitLife tips for a better life</h2>
+    <ul class="tips">
+      <li><b>📚 Study early</b>Going to the library and studying harder while you're young pays off with college and higher-paying careers.</li>
+      <li><b>⚖️ Keep a balance</b>A big salary with zero happiness is still a rough life. Spend time with family and friends.</li>
+      <li><b>💰 Save before you spend</b>Houses, cars and luxury items cost money every year. Don't buy more than your income can handle.</li>
+      <li><b>🩺 See the doctor</b>Ignoring an illness can drain your health fast, especially as you get older.</li>
+      <li><b>🎲 Experiment</b>The fun of BitLife is replaying it. Try a perfect life, a chaotic life, a famous life — every run is different.</li>
     </ul>
   </section>
 
-  <section id="why">
-    <h2>Why play BitLife unblocked here?</h2>
-    <ul>
-      <li><strong>No ads, no pop-ups</strong> — just the game.</li>
-      <li><strong>Fast</strong> — this page is a single small file, and the game only loads when you press Play.</li>
-      <li><strong>Full screen</strong> on desktop and mobile with one button.</li>
-      <li><strong>Works on Chromebook</strong>, Windows, Mac, iPad and Android — any modern browser.</li>
-      <li><strong>No download, no account</strong> — open the page and play BitLife online.</li>
-    </ul>
+  <section class="card" id="why">
+    <h2><span class="dot" style="background:var(--blue)"></span>Why play BitLife unblocked here?</h2>
+    <div class="why">
+      <div style="background:var(--red)"><span>🚫</span>No ads, no pop-ups</div>
+      <div style="background:var(--orange)"><span>⚡</span>Loads fast</div>
+      <div style="background:var(--green)"><span>⛶</span>Full screen</div>
+      <div style="background:var(--blue)"><span>💻</span>Works on Chromebook</div>
+      <div style="background:var(--purple)"><span>🆓</span>Free, no account</div>
+    </div>
   </section>
 
-  <section id="faq">
-    <h2>BitLife Unblocked FAQ</h2>
+  <section class="card" id="faq">
+    <h2><span class="dot" style="background:var(--purple)"></span>BitLife Unblocked FAQ</h2>
     <details open><summary>Is BitLife Unblocked free?</summary><p>Yes. You can play BitLife Unblocked for free in your browser. There is nothing to download or install and no account is needed.</p></details>
     <details><summary>Does BitLife Unblocked work on a school Chromebook?</summary><p>Yes. The game runs in the browser, so it works on Chromebooks, Windows PCs, Macs, tablets and phones, as long as your network allows the page to load.</p></details>
     <details><summary>Does this page have ads?</summary><p>No. This page has no ads and no pop-ups, so it loads fast and the game stays the focus.</p></details>
     <details><summary>Is my BitLife progress saved?</summary><p>Progress is stored in your browser. If you clear your browsing data, use incognito mode or switch devices, your life may start over.</p></details>
-    <details><summary>How do I play BitLife in full screen?</summary><p>Press Play, then use the Full screen button under the game. Press Esc (or the ✕ button on mobile) to exit.</p></details>
-    <details><summary>The game won't load. What can I do?</summary><p>Press <em>Reload game</em>, refresh the page, or try another browser. Some networks block game content; if so, try again later or on a different connection.</p></details>
+    <details><summary>How do I play BitLife in full screen?</summary><p>Use the Full screen button under the game. Press Esc (or the ✕ button on mobile) to exit.</p></details>
+    <details><summary>The game won't load. What can I do?</summary><p>Press <em>Reload</em>, refresh the page, or try another browser. Some networks block game content; if so, try again later or on a different connection.</p></details>
     <details><summary>Is this the official BitLife website?</summary><p>No. This is an unofficial fan page for playing BitLife in a browser. BitLife is made by Candywriter, LLC.</p></details>
   </section>
 
@@ -227,34 +250,23 @@ footer a{color:var(--muted);margin:0 8px}
 </main>
 
 <footer>
-  <div class="wrap">
-    <a href="/policy.html">Privacy</a> · <a href="/term.html">Terms</a> · <a href="/dmca.html">DMCA</a>
-    <p>© 2026 BitLife Unblocked</p>
-  </div>
+  <a href="/policy.html">Privacy</a> · <a href="/term.html">Terms</a> · <a href="/dmca.html">DMCA</a>
+  <p>© 2026 BitLife Unblocked</p>
 </footer>
 
 <script>
 (function(){
-  var GAME='https://htmlxm.github.io/h/bitlife/';
-  var player=document.getElementById('player'),loaded=false;
-  function load(){
-    if(loaded)return;loaded=true;
-    var f=document.createElement('iframe');
-    f.src=GAME;f.title='BitLife Unblocked game';f.allow='fullscreen; autoplay';f.allowFullscreen=true;
-    player.innerHTML='';player.appendChild(f);
-  }
-  document.getElementById('play').addEventListener('click',load);
-  document.getElementById('reload').addEventListener('click',function(){loaded=false;load();});
-  function exitFs(){player.classList.remove('fs');document.body.style.overflow='';}
+  var g=document.getElementById('game'),f=document.getElementById('frame');
+  function exitFs(){g.classList.remove('fs');document.body.style.overflow='';}
+  function cssFs(){g.classList.add('fs');document.body.style.overflow='hidden';}
   document.getElementById('fsbtn').addEventListener('click',function(){
-    load();
-    if(player.requestFullscreen){player.requestFullscreen().catch(function(){player.classList.add('fs');document.body.style.overflow='hidden';});}
-    else if(player.webkitRequestFullscreen){player.webkitRequestFullscreen();}
-    else{player.classList.add('fs');document.body.style.overflow='hidden';}
+    if(g.requestFullscreen){g.requestFullscreen().catch(cssFs);}
+    else if(g.webkitRequestFullscreen){g.webkitRequestFullscreen();}
+    else{cssFs();}
   });
+  document.getElementById('reload').addEventListener('click',function(){f.src=f.src;});
   document.getElementById('closefs').addEventListener('click',exitFs);
   document.addEventListener('keydown',function(e){if(e.key==='Escape')exitFs();});
-  if(location.hash==='#play')load();
 })();
 </script>
 </body>
